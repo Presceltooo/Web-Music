@@ -1,1 +1,1 @@
-web: gunicorn NovaMusic.wsgi
+web: gunicorn NovaMusic.NovaMusic.wsgi
