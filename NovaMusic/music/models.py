@@ -24,6 +24,7 @@ class Music(models.Model):
     page_view = models.IntegerField(default=0)
     single_track = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def get_album_name(self):
         '''If the music object is connected to a album then get album name'''
@@ -43,3 +44,30 @@ class MusicComment(Comment):
     
     def comment_title(self):
         return f'Comment on {self.music} by {self.owner.name if self.owner.name else self.owner.email}'
+
+class Playlist(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='playlists')
+    title = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+class PlaylistSong(models.Model):
+    playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE, related_name='songs')
+    music = models.ForeignKey(Music, on_delete=models.CASCADE)
+    added_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.music.title} in {self.playlist.title}"
+
+class Like(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    music = models.ForeignKey(Music, on_delete=models.CASCADE, null=True, blank=True)
+    album = models.ForeignKey('album.Album', on_delete=models.CASCADE, null=True, blank=True)
+    artist = models.ForeignKey('artist.Artist', on_delete=models.CASCADE, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Like by {self.user.email}"

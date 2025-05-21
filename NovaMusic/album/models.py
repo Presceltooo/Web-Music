@@ -17,6 +17,7 @@ class Album(models.Model):
     release_time = models.DateField(null=True, blank=True)
     published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title

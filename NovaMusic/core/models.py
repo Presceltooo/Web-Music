@@ -31,6 +31,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=255)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     objects = UserManager()
 
@@ -40,5 +42,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Comment(models.Model):
     body = models.TextField(max_length=320)
     created = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=False)
     reply = models.ForeignKey('self', on_delete=models.CASCADE, related_name='replies', null=True, blank=True)
