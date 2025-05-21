@@ -1,75 +1,84 @@
+# WEB-MUSIC
 
+*Unleash Your Music Passion, Connect and Discover*
 
-# Django based music layer
+![last commit](https://img.shields.io/github/last-commit/Presceltooo/web-music) ![css](https://img.shields.io/badge/css-38.5%25-blue) ![languages](https://img.shields.io/github/languages/count/Presceltooo/web-music)
 
-#### Django Music Player is a simple web application built with Django that allows users to upload, manage, and play music files.
+Built with the tools and technologies:
 
+![Gunicorn](https://img.shields.io/badge/Gunicorn-339933?style=flat&logo=gunicorn&logoColor=white)
+![Celery](https://img.shields.io/badge/Celery-4AB886?style=flat&logo=celery&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Razorpay](https://img.shields.io/badge/Razorpay-2D8FF0?style=flat&logo=razorpay&logoColor=white)
+![Twilio](https://img.shields.io/badge/Twilio-FF0000?style=flat&logo=twilio&logoColor=white)
 
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+
+---
+
+## Overview
+
+Web-Music is a powerful Django-based application designed to streamline music management and enhance user engagement.
+
+### Why Web-Music?
+
+This project simplifies the development of music platforms while fostering community interaction. The core features include:
+
+- 🎵 **User Authentication:** Seamless registration and login processes ensure secure access for users.
+- 🎤 **Dynamic Content Management:** Effortlessly manage music, albums, and artists, promoting efficient updates.
+- ⏳ **Asynchronous Task Handling:** Leverage Celery for background tasks, enhancing performance and responsiveness.
+- 🌐 **SEO-Friendly URLs:** Automatically generate slugs for music titles, improving discoverability.
+- 💬 **Engaging User Interaction:** Commenting features and notifications foster a vibrant community experience.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+This project requires the following dependencies:
+
+- **Programming Language:** Python 3.10
+- **Package Manager:** Pip
+
+---
 
 ## Installation 📦
-### To install Django Music Player, follow these steps:
-## 1. Clone this repository:
->'https://github.com/Presceltooo/Web-Music.git'
-## 2. Navigate to the project directory:
+
+### To install Web-Music, follow these steps:
+
+1. **Clone this repository:**
 
 ```bash
-  cd NovaMusic
+git clone https://github.com/Presceltooo/Web-Music.git
 ```
-## 3 . Create a virtual environment:
+
 ```bash
-  py -3.10 -m venv .venv310
+cd Web-Music
 ```
-## 4. Activate the virtual environment:
+
+```bash
+py -3.10 -m venv .venv310
+```
+
 ```bash
   source .venv310\Scripts\activate
 ```
-## 5. Install the project dependencies:
+
 ```bash
   pip install -r requirements.txt
 ```
-## 6 . Run the server
+
 ```bash
   python manage.py runserver
 ```
-## 7 . Go to localhost:8000
+>> Go to localhost:8000
 ---
-
-## Features 📋
-
-⚡️ SignUp and SignIn option.\
-⚡️ Google SignUp and SignIn option.\
-⚡️ Play song, view detailed information of song.\
-⚡️ Search songs.\
-⚡️ Filter songs based on language and singer.\
-⚡️ Create new playlist.\
-⚡️ Add/Remove songs to/from playlist.\
-⚡️ Add/Remove songs to/from favourites.\
-⚡️ Scroll through recently played/viewed songs.\
-⚡️ Explore songs through your personalized playlist and favourites.\
-⚡️ User authentication: Users can sign up, log in, and log out.
-
-
----
-
-## Contributing 💡
-
-#### If you'd like to contribute to Django Music Player, feel free to fork this repository and submit a pull request.
-
-
-#### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine.
-
-
-#### Step 2
-
-- **Build your code** 🔨🔨🔨
-
-#### Step 3
-
-- 🔃 Create a new pull request.
-
