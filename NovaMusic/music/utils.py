@@ -1,12 +1,12 @@
 from django.db.models import Q 
 from music.models import Music
 
-def Search(reqeust):
+def Search(request):
     '''Search function view'''
     search_query = ''
 
-    if reqeust.GET.get('query'):
-        search_query = reqeust.GET.get('query')
+    if request.GET.get('query'):
+        search_query = request.GET.get('query')
     
     only_published_music = Music.objects.filter(published=True)
 
