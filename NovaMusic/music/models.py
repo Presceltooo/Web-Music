@@ -25,6 +25,8 @@ class Music(models.Model):
     single_track = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    audio_url = models.URLField(max_length=500, blank=True, null=True, help_text="Link mp3 hoặc stream nhạc")
+    audio_file = models.FileField(upload_to='music/', blank=True, null=True, help_text="File mp3 thực tế (nếu có)")
 
     def get_album_name(self):
         '''If the music object is connected to a album then get album name'''
