@@ -9,11 +9,11 @@ from home.utils import Search
 def HomePage(request):
     '''Home page view'''
     posters = Poster.objects.all()
-    new_song_for_player = Music.objects.filter(published=True).order_by('-created').first()
+    new_song_for_player = Music.objects.filter(published=True).exclude(song='').exclude(song__isnull=True).order_by('-created').first()
     get_genres = Genre.objects.all()
-    get_songs = Music.objects.filter(published=True).order_by('-created')[:5]
-    get_single_songs = Music.objects.filter(published=True, single_track=True).order_by('-created')[:5]
-    get_top_songs = Music.objects.filter(published=True).order_by('page_view')[:5]
+    get_songs = Music.objects.filter(published=True).exclude(song='').exclude(song__isnull=True).order_by('-created')[:5]
+    get_single_songs = Music.objects.filter(published=True, single_track=True).exclude(song='').exclude(song__isnull=True).order_by('-created')[:5]
+    get_top_songs = Music.objects.filter(published=True).exclude(song='').exclude(song__isnull=True).order_by('page_view')[:5]
     get_newest_albums = Album.objects.filter(published=True).order_by('-created')[:6]
     get_artists = Artist.objects.all().order_by('-created')[:12]
 
